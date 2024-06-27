@@ -20,7 +20,7 @@ export default {
 	output: [
 		{
 			file: 'bundle.js',
-			format: 'esm',
+			format: 'cjs',
 			sourcemap: true,
 			inlineDynamicImports: false,
 		},
@@ -34,7 +34,7 @@ export default {
 	plugins: [
 		node({ browser: true }),
 		cjs({}),
-		css({ minify: true, output: 'styles.min.css' }),
+		css({ minify: true }),
 		serve({ minify: true, open: false }),
 		production && terser({ maxWorkers: 4 }),
 		summary({ showGzippedSize: true }),

@@ -1,4 +1,4 @@
-import './styles.css';
+import './style.css';
 
 import GeoJSON from 'ol/format/GeoJSON.js';
 

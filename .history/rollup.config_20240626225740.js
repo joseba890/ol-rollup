@@ -20,9 +20,13 @@ export default {
 	output: [
 		{
 			file: 'bundle.js',
-			format: 'esm',
+			format: 'cjs',
 			sourcemap: true,
 			inlineDynamicImports: false,
+		},
+		{
+			file: 'bundle.js',
+			format: 'cjs',
 		},
 		{
 			file: 'bundle.min.js',
@@ -34,12 +38,12 @@ export default {
 	plugins: [
 		node({ browser: true }),
 		cjs({}),
-		css({ minify: true, output: 'styles.min.css' }),
+		css({ minify: true }),
 		serve({ minify: true, open: false }),
 		production && terser({ maxWorkers: 4 }),
 		summary({ showGzippedSize: true }),
 		gzipPlugin(),
-		json(),
+		JSON(),
 		// bundleStats(),
 	],
 };
