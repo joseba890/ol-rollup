@@ -9,7 +9,6 @@ import css from 'rollup-plugin-import-css';
 import serve from 'rollup-plugin-serve';
 import summary from 'rollup-plugin-summary';
 import gzipPlugin from 'rollup-plugin-gzip';
-// import bundleStats from 'rollup-plugin-bundle-stats';
 
 const production = process.env.ROLLUP_WATCH;
 // const production = !process.env.ROLLUP_WATCH;
@@ -32,6 +31,5 @@ export default {
 		production && terser({ maxWorkers: 4 }),
 		summary({ showGzippedSize: true }),
 		gzipPlugin(),
-		// bundleStats(),
 	],
 };

@@ -65,6 +65,10 @@ const map = new Map({
 	}),
 });
 
+// map.getView().setCenter(Projection.fromLonLat([43.6415, -71.7791]));
+
+// map.setView([43.6415, -71.7791]);
+
 map.addControl(
 	new MousePosition({
 		className: 'mousePosition',
@@ -81,10 +85,6 @@ map.addControl(new ZoomSlider());
 // sandbox below
 
 /*
-
-// map.getView().setCenter(Projection.fromLonLat([43.6415, -71.7791]));
-
-// map.setView([43.6415, -71.7791]);
 
 const featureOverlay = new VectorLayer({
 	source: new VectorSource(),

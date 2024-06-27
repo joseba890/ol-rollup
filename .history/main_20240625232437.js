@@ -11,7 +11,7 @@ import TileLayer from 'ol/layer/Tile.js';
 import OSM from 'ol/source/OSM.js';
 // import OpenCycleMap from 'ol/layer/Op';
 
-import { Attribution, MousePosition, ZoomSlider } from 'ol/control.js';
+import { Attribution, MousePosition, ZoomSlider } from 'ol/control';
 
 import Overlay from 'ol/Overlay.js';
 import { fromLonLat, toLonLat } from 'ol/proj.js';
@@ -19,7 +19,7 @@ import { fromLonLat, toLonLat } from 'ol/proj.js';
 import VectorLayer from 'ol/layer/Vector.js';
 import VectorSource from 'ol/source/Vector.js';
 
-// import { addProjection } from 'ol/proj';
+import { addProjection } from 'ol/proj';
 
 import { createStringXY } from 'ol/coordinate.js';
 
@@ -65,6 +65,19 @@ const map = new Map({
 	}),
 });
 
+const featureOverlay = new VectorLayer({
+	source: new VectorSource(),
+	map: map,
+	style: {
+		'stroke-color': 'rgba(255, 255, 255, 0.7)',
+		'stroke-width': 2,
+	},
+});
+
+// map.getView().setCenter(Projection.fromLonLat([43.6415, -71.7791]));
+
+// map.setView([43.6415, -71.7791]);
+
 map.addControl(
 	new MousePosition({
 		className: 'mousePosition',
@@ -82,18 +95,6 @@ map.addControl(new ZoomSlider());
 
 /*
 
-// map.getView().setCenter(Projection.fromLonLat([43.6415, -71.7791]));
-
-// map.setView([43.6415, -71.7791]);
-
-const featureOverlay = new VectorLayer({
-	source: new VectorSource(),
-	map: map,
-	style: {
-		'stroke-color': 'rgba(255, 255, 255, 0.7)',
-		'stroke-width': 20,
-	},
-});
 
 const vectorLayer = new VectorLayer({
 	background: '#1a2b39',

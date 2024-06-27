@@ -9,7 +9,6 @@ import css from 'rollup-plugin-import-css';
 import serve from 'rollup-plugin-serve';
 import summary from 'rollup-plugin-summary';
 import gzipPlugin from 'rollup-plugin-gzip';
-// import bundleStats from 'rollup-plugin-bundle-stats';
 
 const production = process.env.ROLLUP_WATCH;
 // const production = !process.env.ROLLUP_WATCH;
@@ -19,7 +18,7 @@ export default {
 	output: [
 		{
 			file: 'bundle.js',
-			format: 'cjs',
+			format: 'esm',
 			sourcemap: true,
 			inlineDynamicImports: false,
 		},
@@ -28,10 +27,9 @@ export default {
 		node({ browser: true }),
 		cjs({}),
 		css({ minify: true }),
-		serve({ minify: true, open: false }),
+		serve({ minify: true }),
 		production && terser({ maxWorkers: 4 }),
 		summary({ showGzippedSize: true }),
 		gzipPlugin(),
-		// bundleStats(),
 	],
 };

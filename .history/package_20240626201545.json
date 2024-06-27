@@ -5,22 +5,18 @@
 	"type": "module",
 	"scripts": {
 		"start": "rollup --config rollup.config.js --watch",
-		"build": "rollup --config rollup.config.js",
-		"production": "rollup -c"
+		"build": "rollup --config rollup.config.js"
 	},
 	"devDependencies": {
 		"@rollup/plugin-commonjs": "^26.0.1",
 		"@rollup/plugin-node-resolve": "^15.2.3",
 		"@rollup/plugin-terser": "^0.4.4",
 		"rollup": "^4.18.0",
-		"rollup-plugin-gzip": "^3.1.2",
-		"rollup-plugin-serve": "^1.1.1",
-		"rollup-plugin-summary": "^2.0.1"
+		"rollup-plugin-serve": "^1.1.1"
 	},
 	"dependencies": {
 		"npm-check-updates": "^16.14.20",
 		"ol": "^9.2.4",
-		"rollup-plugin-bundle-stats": "^4.13.3",
 		"rollup-plugin-import-css": "^3.5.0"
 	}
 }

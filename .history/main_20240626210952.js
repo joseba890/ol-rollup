@@ -65,6 +65,19 @@ const map = new Map({
 	}),
 });
 
+const featureOverlay = new VectorLayer({
+	source: new VectorSource(),
+	map: map,
+	style: {
+		'stroke-color': 'rgba(255, 255, 255, 0.7)',
+		'stroke-width': 2,
+	},
+});
+
+// map.getView().setCenter(Projection.fromLonLat([43.6415, -71.7791]));
+
+// map.setView([43.6415, -71.7791]);
+
 map.addControl(
 	new MousePosition({
 		className: 'mousePosition',
@@ -82,18 +95,6 @@ map.addControl(new ZoomSlider());
 
 /*
 
-// map.getView().setCenter(Projection.fromLonLat([43.6415, -71.7791]));
-
-// map.setView([43.6415, -71.7791]);
-
-const featureOverlay = new VectorLayer({
-	source: new VectorSource(),
-	map: map,
-	style: {
-		'stroke-color': 'rgba(255, 255, 255, 0.7)',
-		'stroke-width': 20,
-	},
-});
 
 const vectorLayer = new VectorLayer({
 	background: '#1a2b39',
