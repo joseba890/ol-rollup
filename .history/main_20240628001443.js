@@ -54,9 +54,9 @@ const map = new Map({
 			source: new OSM(),
 			projection: 'EPSG:4326',
 			// extent: bounds,
-			// zIndex: 100,
-			minZoom: 6,
-			maxZoom: 12,
+			zIndex: 6,
+			minZoom: 8,
+			maxZoom: 8,
 		}),
 		geoJsonLayer,
 		// fuxDiv,
@@ -80,8 +80,8 @@ map.addControl(
 );
 map.addControl(
 	new ZoomSlider({
-		// className: 'zoomSlider',
-		duration: 200,
+		className: 'zoomSlider',
+		duration: 100,
 	})
 );
 

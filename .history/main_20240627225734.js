@@ -35,8 +35,7 @@ var geoJsonLayer = new VectorLayer({
 	title: 'Boundaries',
 	source: geoJsonSource,
 	projection: 'EPSG:4326',
-	minResolution: 2000,
-	maxResolution: 20000,
+	maxResolution: 2,
 });
 
 const fuxDiv = new Overlay({
@@ -54,9 +53,6 @@ const map = new Map({
 			source: new OSM(),
 			projection: 'EPSG:4326',
 			// extent: bounds,
-			// zIndex: 100,
-			minZoom: 6,
-			maxZoom: 12,
 		}),
 		geoJsonLayer,
 		// fuxDiv,
@@ -66,7 +62,6 @@ const map = new Map({
 	view: new View({
 		center: fromLonLat(lonLat), // fromLonLat([-74.5916, 40.4454]), // ([6.6339863, 46.5193823]),
 		zoom: 8,
-		minZoom: 6,
 		maxZoom: 12,
 	}),
 });
@@ -78,12 +73,7 @@ map.addControl(
 		projection: 'EPSG:4326',
 	})
 );
-map.addControl(
-	new ZoomSlider({
-		// className: 'zoomSlider',
-		duration: 200,
-	})
-);
+map.addControl(new ZoomSlider());
 
 // map.addOverlay(overlay);
 

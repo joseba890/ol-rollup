@@ -80,8 +80,8 @@ map.addControl(
 );
 map.addControl(
 	new ZoomSlider({
-		// className: 'zoomSlider',
-		duration: 200,
+		className: 'zoomSlider',
+		duration: 100,
 	})
 );
 

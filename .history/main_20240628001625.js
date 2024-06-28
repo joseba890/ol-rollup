@@ -54,8 +54,8 @@ const map = new Map({
 			source: new OSM(),
 			projection: 'EPSG:4326',
 			// extent: bounds,
-			// zIndex: 100,
-			minZoom: 6,
+			zIndex: 100,
+			minZoom: 8,
 			maxZoom: 12,
 		}),
 		geoJsonLayer,
@@ -65,8 +65,8 @@ const map = new Map({
 	// bounds: bounds,
 	view: new View({
 		center: fromLonLat(lonLat), // fromLonLat([-74.5916, 40.4454]), // ([6.6339863, 46.5193823]),
-		zoom: 8,
-		minZoom: 6,
+		zoom: 10,
+		minZoom: 8,
 		maxZoom: 12,
 	}),
 });
@@ -80,8 +80,8 @@ map.addControl(
 );
 map.addControl(
 	new ZoomSlider({
-		// className: 'zoomSlider',
-		duration: 200,
+		className: 'zoomSlider',
+		duration: 100,
 	})
 );
 
