@@ -22,7 +22,6 @@ import VectorSource from 'ol/source/Vector.js';
 // import { addProjection } from 'ol/proj';
 
 import { createStringXY } from 'ol/coordinate.js';
-import { toStringHDMS } from 'ol/coordinate.js';
 
 /* ****************************************** */
 

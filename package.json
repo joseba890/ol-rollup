@@ -21,6 +21,7 @@
 	"dependencies": {
 		"npm-check-updates": "^16.14.20",
 		"ol": "^9.2.4",
+		"ol-popup": "^5.1.1",
 		"rollup-plugin-bundle-stats": "^4.13.3",
 		"rollup-plugin-import-css": "^3.5.0"
 	}

@@ -22,7 +22,6 @@ import VectorSource from 'ol/source/Vector.js';
 // import { addProjection } from 'ol/proj';
 
 import { createStringXY } from 'ol/coordinate.js';
-import { toStringHDMS } from 'ol/coordinate.js';
 
 /* ****************************************** */
 
@@ -137,18 +136,18 @@ map.addControl(
 	})
 );
 
-// var popup = new Popup();
-// map.addOverlay(popup);
+var popup = new Popup();
+map.addOverlay(popup);
 
-/**
- * Add a click handler to the map to render the popup.
- */
 map.on('singleclick', function (evt) {
-	const coordinate = evt.coordinate;
-	const hdms = toStringHDMS(toLonLat(coordinate));
-
-	content.innerHTML = '<p>You clicked here:</p><code>' + hdms + '</code>';
-	overlay.setPosition(coordinate);
+	var prettyCoord = ol.coordinate.toStringHDMS(
+		ol.proj.transform(evt.coordinate, 'EPSG:3857', 'EPSG:4326'),
+		2
+	);
+	popup.show(
+		evt.coordinate,
+		'<div><h2>Coordinates</h2><p>' + prettyCoord + '</p></div>'
+	);
 });
 
 var version = (function () {

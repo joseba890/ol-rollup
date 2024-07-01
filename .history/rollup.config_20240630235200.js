@@ -10,7 +10,7 @@ import serve from 'rollup-plugin-serve';
 import summary from 'rollup-plugin-summary';
 import gzipPlugin from 'rollup-plugin-gzip';
 import json from '@rollup/plugin-json';
-// import Popup from 'ol-popup';
+import Popup from 'ol-popup';
 // import bundleStats from 'rollup-plugin-bundle-stats';
 
 const production = process.env.ROLLUP_WATCH;
@@ -42,7 +42,6 @@ export default {
 		summary({ showGzippedSize: true }),
 		gzipPlugin(),
 		json(),
-		// Popup,
 		// bundleStats(),
 	],
 };
